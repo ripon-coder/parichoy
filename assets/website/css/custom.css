@@ -1,0 +1,107 @@
+body{
+    position: initial !important;
+}
+.container{
+    padding: 0;
+}
+
+.addThis {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 14px;
+}
+
+.addthis_inline_share_toolbox_334g {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+
+section.header_times {
+    background: #10837E;
+    color: #fff;
+}
+
+.bangla_date {
+    padding-top: 8px;
+    font-size: 15px;
+    font-family: 'SolaimanLipi', sans-serif;
+}
+
+.top_banner_menu_link ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+.top_banner_menu_link ul li {
+    border-right: 1px solid #fff;
+    display: inline;
+    margin: 0;
+}
+
+.top_banner_menu_link ul li:nth-child(2) {
+    border-right: none;
+}
+
+.top_banner_menu_link ul li:last-child {
+    border: none !important;
+}
+.top_banner_menu_link ul li a {
+    color: #fff;
+    display: inline-block;
+    padding: 8px 10px;
+    font-size: 14px;
+    font-family: 'SolaimanLipi', Arial, sans-serif !important;
+}
+
+.single-language {
+    background: #002035;
+    color: #fff;
+    border: 1px solid #d4d4d4 !important;
+}
+
+.footer-nav-item-wrapper .main-title {
+    border-bottom: 1px solid #606060;
+    padding-bottom: 15px;
+}
+
+
+
+/* Google Translate css */
+.goog-te-gadget-simple {
+    padding: 0px !important;
+    line-height: 1.428571429;
+    color: #555555;
+    vertical-align: middle;
+    background-color: #fff;
+    border: 1px solid #a5a5a599;
+    border-radius: 4px;
+    width: 100%;
+    float: right;
+    margin-top: -4px;
+}
+
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
+.goog-te-gadget-icon {
+    background: none !important;
+    display: none;
+}       
+.goog-te-gadget-simple .goog-te-menu-value {
+    color: #000;
+    font-size: 12px;
+    font-family: 'Open Sans' , sans-serif;
+}
+
+.youtube-video iframe {
+    height: 310px;
+}
+
+

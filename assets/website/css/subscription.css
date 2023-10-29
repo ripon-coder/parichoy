@@ -1,0 +1,66 @@
+.ihc-level-item-wrap {
+    background-color: #00a761;
+    box-shadow: 2px 0 30px rgb(0 0 0 / 10%);
+    -webkit-box-shadow: 0 0 9px rgb(0 0 0 / 10%);
+    -moz-box-shadow: 2px 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.ihc-level-item-top {
+    text-align: center;
+}
+
+.ihc-level-item-title {
+    font-family: Oswald, arial, sans-serif !important;
+    color: #fff;
+    font-size: 22px;
+    border: none;
+    padding: 17px 6px;
+    line-height: 40px;
+    min-height: 60px;
+}
+
+.ihc-level-item-price {
+    font-family: Oswald, arial, sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #f6f9fc;
+    font-size: 31px;
+    color: #2c3e50;
+    text-align: center;
+    line-height: 75px;
+    padding: 10px 0;
+    min-height: 95px;
+}
+
+.ihc-level-item-content {
+    padding: 20px 30px;
+    text-align: left;
+    color: #fff;
+    min-height: 175px;
+    padding-bottom: 80px;
+    box-sizing: border-box;
+}
+.ihc-level-item-bottom {
+    padding-bottom: 23px;
+    width: 55%;
+    margin: 0 auto;
+}
+.ihc-level-item-bottom a,
+.ihc-level-item-bottom button {
+    background: #fff;
+    padding: 11px;
+    text-align: center;
+    display: block;
+    font-size: 17px;
+    font-weight: 700;
+    color: #000;
+    border-radius: 5px;
+    border: transparent;
+}
+
+.ihc-level-item-bottom button {
+    width: 87%;
+    margin: 0 auto;
+}

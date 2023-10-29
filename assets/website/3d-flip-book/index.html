@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Debugging</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+
+    <style type="text/css">
+      body {
+              margin: 0;
+              padding: 0;
+          }
+          .solid-container {
+            height: 100vh;
+          }
+    </style>
+
+
+    <div class="flip-book-container solid-container" src="http://localhost/flip-book-2/3d-flip-book/books/pdf/FoxitPdfSdk.pdf">
+
+    </div>
+
+    <script src="js/libs/jquery.min.js"></script>
+    <script src="js/libs/html2canvas.min.js"></script>
+    <script src="js/libs/three.min.js"></script>
+    <script src="js/libs/pdf.min.js"></script>
+
+    <script src="js/dist/3dflipbook.js"></script>
+
+
+<!-- To create 3D FlipBook from PDF -->
+    <script type="text/javascript">
+      $('.solid-container').FlipBook({pdf: 'http://localhost/flip-book-2/3d-flip-book/books/pdf/FoxitPdfSdk.pdf'});
+    </script>
+
+    <!-- To create 3D FlipBook from images -->
+    <!-- <script type="text/javascript">
+      $('.solid-container').FlipBook({
+        pageCallback: function(n) {
+          return {
+            type: 'image',
+            src: 'http://localhost/flip-book-wordpress/3d-flip-book/books/image/theKingIsBlack/'+(n+1)+'.jpg',
+            interactive: false
+          };
+        },
+        pages: 40
+      });
+    </script> -->
+
+    <!-- To create 3D FlipBook from HTMLs -->
+    <!-- <script type="text/javascript">
+      $('.solid-container').FlipBook({
+        pageCallback: function(n) {
+          return {
+            type: 'html',
+            src: 'http://localhost/flip-book-wordpress/3d-flip-book/books/image/preview/'+(n%3+1)+'.html',
+            interactive: true
+          };
+        },
+        pages: 10
+      });
+    </script> -->
+
+  </body>
+</html>
