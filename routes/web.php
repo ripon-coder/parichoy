@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\VideoCategory;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\SubscribesUser;
@@ -7,6 +8,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\Website\PageController;
 use App\Http\Controllers\Admin\AboutUsController;
+use App\Http\Controllers\Website\VideoController;
 use App\Http\Controllers\Admin\AllImageController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\SubscribeLoginController;
@@ -15,6 +17,7 @@ use App\Http\Controllers\Website\CommentController;
 use App\Http\Controllers\Website\PaymentController;
 use App\Http\Controllers\Admin\HeroSliderController;
 use App\Http\Controllers\Admin\HomepageAdController;
+use App\Http\Controllers\Admin\VideoAdminController;
 use App\Http\Controllers\Website\DonationController;
 use App\Http\Controllers\Admin\AboutUsPageController;
 use App\Http\Controllers\Admin\AdminCommentController;
@@ -23,13 +26,13 @@ use App\Http\Controllers\Admin\PrintAndNewsController;
 use App\Http\Controllers\Website\SubscribeUserProfile;
 use App\Http\Controllers\Admin\AdversisementController;
 use App\Http\Controllers\Admin\PrintNewsCategoryController;
+use App\Http\Controllers\Admin\VideoCategoryAdminController;
 use App\Http\Controllers\Admin\ArchivePrintVersionController;
 use App\Http\Controllers\Website\RegisterPlanFrontController;
 use App\Http\Controllers\Subscribe\Auth\ResetPasswordController;
 use App\Http\Controllers\Subscribe\Auth\ForgotPasswordController;
 use App\Http\Controllers\Website\MemberShipUpdateInfoFrontController;
 use App\Http\Controllers\Website\MemberApplicationFromFrontController;
-use App\Http\Controllers\Website\VideoController;
 
 // Cache Clear
 Route::get('/clear-cache', function() {
@@ -221,6 +224,8 @@ Route::group(['middleware' =>'auth'], function () {
 		Route::get('/homepage-ad-view', [HomepageAdController::class,'index'])->name('homepage-ad-view');
 		Route::post('/homepage-ad-store', [HomepageAdController::class, 'store'])->name('homepage-ad-store');
 
+		Route::resource('video-category', VideoCategoryAdminController::class);
+		Route::resource('video', VideoAdminController::class);
 
 
 	});

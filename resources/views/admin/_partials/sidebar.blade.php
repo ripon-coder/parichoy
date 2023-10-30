@@ -3,9 +3,10 @@
         <div class="logo-src"></div>
         <div class="header__pane ml-auto">
             <div>
-                <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar"> <span class="hamburger-box">
-                    <span class="hamburger-inner"></span>
-                </span>
+                <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
                 </button>
             </div>
         </div>
@@ -33,44 +34,44 @@
             <ul class="vertical-nav-menu">
 
                 @php
-                    $pricinEdit        = strpos($_SERVER['REQUEST_URI'], '/admin/pricing-list/');
-                    $subscribeEdit     = strpos($_SERVER['REQUEST_URI'], '/admin/subscribe-user/');
-                    $heroSlideEdit     = strpos($_SERVER['REQUEST_URI'], '/admin/hero-slider/');
-                    $postEdit          = strpos($_SERVER['REQUEST_URI'], '/admin/post/edit/');
-                    $awardEdit          = strpos($_SERVER['REQUEST_URI'], '/admin/awards/edit/');
-                    $legalsaid          = strpos($_SERVER['REQUEST_URI'], '/admin/legals-aid/edit/');
-                    $membershipEdit    = strpos($_SERVER['REQUEST_URI'], '/admin/membership-renew/');
+                    $pricinEdit = strpos($_SERVER['REQUEST_URI'], '/admin/pricing-list/');
+                    $subscribeEdit = strpos($_SERVER['REQUEST_URI'], '/admin/subscribe-user/');
+                    $heroSlideEdit = strpos($_SERVER['REQUEST_URI'], '/admin/hero-slider/');
+                    $postEdit = strpos($_SERVER['REQUEST_URI'], '/admin/post/edit/');
+                    $awardEdit = strpos($_SERVER['REQUEST_URI'], '/admin/awards/edit/');
+                    $legalsaid = strpos($_SERVER['REQUEST_URI'], '/admin/legals-aid/edit/');
+                    $membershipEdit = strpos($_SERVER['REQUEST_URI'], '/admin/membership-renew/');
                     $generalMemberEdit = strpos($_SERVER['REQUEST_URI'], '/admin/general-member/');
                     $messageMemberEdit = strpos($_SERVER['REQUEST_URI'], '/admin/message-member/');
-                    $missionEdit       = strpos($_SERVER['REQUEST_URI'], '/admin/missions/');
-                    $atglanceEdit      = strpos($_SERVER['REQUEST_URI'], '/admin/at-glance/');
-                    $reunionsEdit      = strpos($_SERVER['REQUEST_URI'], '/admin/reunions/');
-                    $contributions     = strpos($_SERVER['REQUEST_URI'], '/admin/contributions/');
-                    $membershiprenew   = strpos($_SERVER['REQUEST_URI'], '/admin/membership-renew/');
-                    $publication       = strpos($_SERVER['REQUEST_URI'], '/admin/publication/');
-                    $categoryEdit      = strpos($_SERVER['REQUEST_URI'], '/admin/post-category/');
-                    $contributions  = strpos($_SERVER['REQUEST_URI'], '/admin/contributions/');
-                    $electionCommission  = strpos($_SERVER['REQUEST_URI'], '/admin/election-commission/');
+                    $missionEdit = strpos($_SERVER['REQUEST_URI'], '/admin/missions/');
+                    $atglanceEdit = strpos($_SERVER['REQUEST_URI'], '/admin/at-glance/');
+                    $reunionsEdit = strpos($_SERVER['REQUEST_URI'], '/admin/reunions/');
+                    $contributions = strpos($_SERVER['REQUEST_URI'], '/admin/contributions/');
+                    $membershiprenew = strpos($_SERVER['REQUEST_URI'], '/admin/membership-renew/');
+                    $publication = strpos($_SERVER['REQUEST_URI'], '/admin/publication/');
+                    $categoryEdit = strpos($_SERVER['REQUEST_URI'], '/admin/post-category/');
+                    $contributions = strpos($_SERVER['REQUEST_URI'], '/admin/contributions/');
+                    $electionCommission = strpos($_SERVER['REQUEST_URI'], '/admin/election-commission/');
 
-                    if( $generalMemberEdit){
+                    if ($generalMemberEdit) {
                         $member = $generalMemberEdit;
-                    }else{
+                    } else {
                         $member = $messageMemberEdit;
                     }
 
-                    if($missionEdit){
+                    if ($missionEdit) {
                         $homepageContent = $missionEdit;
-                    }elseif ($atglanceEdit){
+                    } elseif ($atglanceEdit) {
                         $homepageContent = $atglanceEdit;
-                    }elseif ($reunionsEdit) {
+                    } elseif ($reunionsEdit) {
                         $homepageContent = $reunionsEdit;
-                    }else{
+                    } else {
                         $homepageContent = $contributions;
                     }
                 @endphp
 
                 <li>
-                    <a href="{{route('admin.dashboard')}}" class="{{ request()->is('admin') ? 'mm-active' : '' }}">
+                    <a href="{{ route('admin.dashboard') }}" class="{{ request()->is('admin') ? 'mm-active' : '' }}">
                         <i class="metismenu-icon fas fa-tachometer-alt"></i>
                         Dashboard
                     </a>
@@ -84,15 +85,17 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="{{ route('admin.hero-slider.create') }}" class="{{ request()->is('admin/hero-slider/create') ? 'mm-active' : '' }}">
+                            <a href="{{ route('admin.hero-slider.create') }}"
+                                class="{{ request()->is('admin/hero-slider/create') ? 'mm-active' : '' }}">
                                 <i class="metismenu-icon"></i>
-                               Add Slide
+                                Add Slide
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.hero-slider.index') }}" class="{{ request()->is('admin/hero-slider') ? 'mm-active' : '' }}">
+                            <a href="{{ route('admin.hero-slider.index') }}"
+                                class="{{ request()->is('admin/hero-slider') ? 'mm-active' : '' }}">
                                 <i class="metismenu-icon"></i>
-                               Manage Slide
+                                Manage Slide
                             </a>
                         </li>
 
@@ -108,14 +111,16 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="{{ route('admin.about-us') }}" class="{{ request()->is('admin/about-us') ? 'mm-active' : '' }}">
+                            <a href="{{ route('admin.about-us') }}"
+                                class="{{ request()->is('admin/about-us') ? 'mm-active' : '' }}">
                                 <i class="metismenu-icon fas fa-clipboard-list"></i>
                                 Edit Contact Info
                             </a>
                         </li>
 
                         <li>
-                            <a href="{{ route('admin.about-us-page') }}" class="{{ request()->is('admin/about-us-page') ? 'mm-active' : '' }}">
+                            <a href="{{ route('admin.about-us-page') }}"
+                                class="{{ request()->is('admin/about-us-page') ? 'mm-active' : '' }}">
                                 <i class="metismenu-icon fas fa-clipboard-list"></i>
                                 About Us Page Content
                             </a>
@@ -132,7 +137,8 @@
                 </li> --}}
 
                 <li class="{{ $categoryEdit ? 'mm-active' : '' }}">
-                    <a href="{{ route('admin.categories.index') }}" class="{{ request()->is('admin/categories') ? 'mm-active' : '' }}">
+                    <a href="{{ route('admin.categories.index') }}"
+                        class="{{ request()->is('admin/categories') ? 'mm-active' : '' }}">
                         <i class="metismenu-icon fas fa-clipboard-list"></i>
                         All Category
                     </a>
@@ -147,13 +153,15 @@
                     <ul>
 
                         <li>
-                            <a href="{{ route('admin.post.create') }}"  class="{{ request()->is('admin/post/create') ? 'mm-active' : '' }}">
+                            <a href="{{ route('admin.post.create') }}"
+                                class="{{ request()->is('admin/post/create') ? 'mm-active' : '' }}">
                                 <i class="metismenu-icon pe-7s-mouse"></i>
-                            Add New Post</a>
+                                Add New Post</a>
                         </li>
 
                         <li>
-                            <a href="{{ route('admin.post.all') }}" class="{{ request()->is('admin/posts') ? 'mm-active' : '' }}">
+                            <a href="{{ route('admin.post.all') }}"
+                                class="{{ request()->is('admin/posts') ? 'mm-active' : '' }}">
                                 <i class="metismenu-icon"></i>
                                 All Posts / News
                             </a>
@@ -161,7 +169,7 @@
                     </ul>
                 </li>
 
-               
+
 
                 {{-- <li class="sm-link">
                     <a href="#" class="{{ $membershiprenew ? 'mm-active' : '' }}">
@@ -189,19 +197,22 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="{{route('admin.photo-gallery')}}" class="{{ request()->is('admin/photo-gallery') ? 'mm-active' : '' }}">
+                            <a href="{{ route('admin.photo-gallery') }}"
+                                class="{{ request()->is('admin/photo-gallery') ? 'mm-active' : '' }}">
                                 <i class="metismenu-icon"></i>
                                 Photo Gallery
                             </a>
                         </li>
                         <li>
-                            <a href="{{route('admin.video-gallery')}}" class="{{ request()->is('admin/video-gallery') ? 'mm-active' : '' }}">
+                            <a href="{{ route('admin.video-gallery') }}"
+                                class="{{ request()->is('admin/video-gallery') ? 'mm-active' : '' }}">
                                 <i class="metismenu-icon"></i>
                                 Youtube Video Gallery
                             </a>
                         </li>
                         <li>
-                            <a href="{{route('admin.admin-facebook-video')}}" class="{{ request()->is('admin/admin-facebook-video') ? 'mm-active' : '' }}">
+                            <a href="{{ route('admin.admin-facebook-video') }}"
+                                class="{{ request()->is('admin/admin-facebook-video') ? 'mm-active' : '' }}">
                                 <i class="metismenu-icon"></i>
                                 Facebook Video
                             </a>
@@ -249,14 +260,16 @@
 
                     <ul>
                         <li>
-                            <a href="{{route('admin.print-media-categories.index')}}" class="{{ request()->is('admin/print-media-categories') ? 'mm-active' : '' }}">
+                            <a href="{{ route('admin.print-media-categories.index') }}"
+                                class="{{ request()->is('admin/print-media-categories') ? 'mm-active' : '' }}">
                                 <i class="metismenu-icon"></i>
                                 Print Media Category
                             </a>
                         </li>
 
                         <li class="{{ request()->is('admin/print-and-media-news') ? 'mm-active' : '' }}">
-                            <a href="{{ route('admin.print-and-media-news') }}" class="{{ request()->is('print-and-media-news') ? 'mm-active' : '' }}">
+                            <a href="{{ route('admin.print-and-media-news') }}"
+                                class="{{ request()->is('print-and-media-news') ? 'mm-active' : '' }}">
                                 <i class="metismenu-icon fas fa-clipboard-list"></i>
                                 Print & Media List
                             </a>
@@ -273,14 +286,16 @@
 
                     <ul>
                         <li>
-                            <a href="{{route('admin.print-media-categories.index')}}" class="{{ request()->is('admin/print-media-categories') ? 'mm-active' : '' }}">
+                            <a href="{{ route('admin.print-media-categories.index') }}"
+                                class="{{ request()->is('admin/print-media-categories') ? 'mm-active' : '' }}">
                                 <i class="metismenu-icon"></i>
                                 Print Media Category
                             </a>
                         </li>
 
                         <li class="{{ request()->is('/print-and-media-news') ? 'mm-active' : '' }}">
-                            <a href="{{ route('admin.print-and-media-news') }}" class="{{ request()->is('print-and-media-news') ? 'mm-active' : '' }}">
+                            <a href="{{ route('admin.print-and-media-news') }}"
+                                class="{{ request()->is('print-and-media-news') ? 'mm-active' : '' }}">
                                 <i class="metismenu-icon fas fa-clipboard-list"></i>
                                 Print & Media List
                             </a>
@@ -297,14 +312,16 @@
 
                     <ul>
                         <li>
-                            <a href="{{route('admin.archive-print-versions.index')}}" class="{{ request()->is('admin/archive-print-versions') ? 'mm-active' : '' }}">
+                            <a href="{{ route('admin.archive-print-versions.index') }}"
+                                class="{{ request()->is('admin/archive-print-versions') ? 'mm-active' : '' }}">
                                 <i class="metismenu-icon"></i>
                                 Manage Print Version
                             </a>
                         </li>
 
                         <li class="{{ request()->is('admin/archive-print-versions') ? 'mm-active' : '' }}">
-                            <a href="{{ route('admin.archive-print-versions.create') }}" class="{{ request()->is('archive-print-versions') ? 'mm-active' : '' }}">
+                            <a href="{{ route('admin.archive-print-versions.create') }}"
+                                class="{{ request()->is('archive-print-versions') ? 'mm-active' : '' }}">
                                 <i class="metismenu-icon fas fa-clipboard-list"></i>
                                 Add Print Version
                             </a>
@@ -312,29 +329,73 @@
                     </ul>
                 </li>
 
+                <li class="sm-link">
+                    <a href="#" class="@if(request()->is(['admin/video-category/*','admin/video/*'])) mm-active @endif">
+                        <i class="metismenu-icon fas fa-clipboard-list"></i>
+                        Video
+                        <i class="metismenu-state-icon fas fa-chevron-down"></i>
+                    </a>
+
+                    <ul>
+                        <li>
+                            <a href="{{ route('admin.video-category.index') }}"
+                                class="{{ request()->is('admin/video-category') ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>
+                                Manage Video Category
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.video-category.create') }}"
+                                class="{{ request()->is('admin/video-category/create') ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>
+                                Add Video Category
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.video.index') }}"
+                                class="{{ request()->is('admin/video') ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>
+                                Manage Video
+                            </a>
+                        </li>
+
+                        <li class="{{ request()->is('admin/video/create') ? 'mm-active' : '' }}">
+                            <a href="{{ route('admin.video.create') }}"
+                                class="{{ request()->is('admin/video/create') ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon fas fa-clipboard-list"></i>
+                                Add Video
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li class="{{ request()->is('/comments') ? 'mm-active' : '' }}">
-                    <a href="{{ route('admin.comments.index') }}" class="{{ request()->is('comments') ? 'mm-active' : '' }}">
+                    <a href="{{ route('admin.comments.index') }}"
+                        class="{{ request()->is('comments') ? 'mm-active' : '' }}">
                         <i class="metismenu-icon fas fa-clipboard-list"></i>
                         Comment List
                     </a>
                 </li>
 
                 <li class="{{ request()->is('/homepage-ad-view') ? 'mm-active' : '' }}">
-                    <a href="{{ route('admin.homepage-ad-view') }}" class="{{ request()->is('homepage-ad-view') ? 'mm-active' : '' }}">
+                    <a href="{{ route('admin.homepage-ad-view') }}"
+                        class="{{ request()->is('homepage-ad-view') ? 'mm-active' : '' }}">
                         <i class="metismenu-icon fas fa-clipboard-list"></i>
                         All AD For Homepage
                     </a>
                 </li>
 
                 <li class="{{ request()->is('/advertisement') ? 'mm-active' : '' }}">
-                    <a href="{{ route('admin.advertisement.index') }}" class="{{ request()->is('advertisement') ? 'mm-active' : '' }}">
+                    <a href="{{ route('admin.advertisement.index') }}"
+                        class="{{ request()->is('advertisement') ? 'mm-active' : '' }}">
                         <i class="metismenu-icon fas fa-clipboard-list"></i>
                         All Advertisement List
                     </a>
                 </li>
 
                 <li class="{{ request()->is('/delele-junks') ? 'mm-active' : '' }}">
-                    <a href="{{ route('admin.delele-junks') }}" class="{{ request()->is('delele-junks') ? 'mm-active' : '' }}">
+                    <a href="{{ route('admin.delele-junks') }}"
+                        class="{{ request()->is('delele-junks') ? 'mm-active' : '' }}">
                         <i class="metismenu-icon fas fa-clipboard-list"></i>
                         Delete Junks
                     </a>
