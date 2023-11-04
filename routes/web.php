@@ -69,6 +69,7 @@ Route::get('/all-advertisement', [PageController::class, 'getAllAdvertisement'])
 Route::get('/single-archive-print-version/{id}', [PageController::class, 'Single_archive_Print_Version'])->name('single-archive-print-version');
 
 Route::get('/video',[VideoController::class,'index'])->name('video');
+Route::get('/more-video/{category}',[VideoController::class,'MoreVideo'])->name('more-video');
 
 Route::resource('/comment-store', CommentController::class);
 

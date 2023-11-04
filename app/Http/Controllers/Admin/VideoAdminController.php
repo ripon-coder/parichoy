@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\VideoCategory;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 
 class VideoAdminController extends Controller
 {
@@ -17,8 +18,8 @@ class VideoAdminController extends Controller
      */
     public function index()
     {
-        $videos = Video::orderBy('id','desc')->paginate(30);
-        return view('admin.video.index',compact('videos'));
+        $videos = Video::orderBy('id','DESC')->paginate(30);
+        return view('admin.video.index', compact('videos'));
     }
 
     /**
@@ -29,7 +30,7 @@ class VideoAdminController extends Controller
     public function create()
     {
         $video_category = VideoCategory::all();
-        return view('admin.video.create',compact('video_category'));
+        return view('admin.video.create', compact('video_category'));
     }
 
     /**
@@ -47,10 +48,19 @@ class VideoAdminController extends Controller
         $video->youtube_id = $request->youtube_id;
         $video->description = $request->description;
         $video->status = $request->status;
+        $video->feature = $request->feature;
+        if ($request->hasFile('thumbnail')) {
+            $image = $request->file('thumbnail');
+            $file_ext  = $image->getClientOriginalExtension();
+            $imageName = mt_rand(111, 99999) . "." . $file_ext;
+            $destination     = "upload/video-thumbnail/";
+            $image->move($destination, $imageName);
+            $video->thumbnail = $imageName;
+        }
+
         $video->save();
         return back()->with('message', 'Video Added Successfully!');
     }
-
     /**
      * Display the specified resource.
      *
@@ -70,7 +80,9 @@ class VideoAdminController extends Controller
      */
     public function edit(Video $video)
     {
-        return $video;
+        $data['video_category'] = VideoCategory::all();
+        $data['video'] = $video;
+        return view('admin.video.edit', $data);
     }
 
     /**
@@ -80,9 +92,28 @@ class VideoAdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Video $video)
     {
-        //
+        $video->title = $request->title;
+        $video->video_categories_id = $request->category_id;
+        $video->youtube_id = $request->youtube_id;
+        $video->description = $request->description;
+        $video->status = $request->status;
+        if ($slider = $request->file('thumbnail')) {
+            $destination     = "upload/video-thumbnail/";
+            if (isset($video->thumbnail)) {
+                if (File::exists($destination . '/' . $video->thumbnail)) {
+                    File::delete($destination . '/' . $video->thumbnail);
+                }
+            }
+
+            $file_ext        = $slider->getClientOriginalExtension();
+            $imagename       = mt_rand(111, 99999) . "." . $file_ext;
+            $slider->move($destination, $imagename);
+            $video->thumbnail = $imagename;
+        }
+        $video->save();
+        return back()->with('message', 'Video Updated Successfully!');
     }
 
     /**

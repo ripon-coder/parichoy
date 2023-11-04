@@ -22,6 +22,8 @@ class CreateVideosTable extends Migration
             $table->string('youtube_id')->nullable();
             $table->text('description')->nullable();
             $table->json('others')->nullable();
+            $table->string('thumbnail')->nullable();
+            $table->boolean('feature')->default(false);
             $table->boolean('status')->default(true);
             $table->foreign('video_categories_id')->references('id')->on('video_categories');
             $table->timestamps();

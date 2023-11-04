@@ -87,7 +87,11 @@
                         @foreach ($menuCategories as $menuCategory)
                             <li class="nav-item-main {{ count($menuCategory->subCategories) > 0 ? 'item-has-submenu' : '' }} ">
                                 <a class="nav-item-link" href="{{ route('category.product.view', $menuCategory->slug) }}">{{ $menuCategory->title }}</a>
-                                
+                                @if($loop->iteration == 9)
+                                <li class="nav-item-main">
+                                    <a class="nav-item-link" href="{{route('video')}}">ভিডিও</a>
+                                </li>
+                                @endif
                                 <ul class="nav-item-submenu">
                                     @foreach ($menuCategory->subCategories as $subCategory)
                                         <li class="nav-item-submenu-item">
@@ -99,6 +103,8 @@
                             </li>
                          @endforeach  
                     @endif
+
+
                     
                     {{-- <li class="nav-item-main item-has-submenu">
                         <a class="nav-item-link" href="">অন্যান্য</a>

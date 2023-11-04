@@ -52,6 +52,21 @@
                                     </div>
 
                                     <div class="position-relative form-group">
+                                        <label for="thumbnail" class="">Thumbnail</label>
+                                        <input type="file" class="form-control" name="thumbnail" required>
+                                    </div>
+
+                                    <div class="position-relative form-group">
+                                        <label class="">Slider</label>
+                                        <small class="form-text text-info pb-1">Show the latest 10 videos in a slider.</small>
+
+                                        <select name="feature" class="form-control" required>
+                                            <option value="1">Yes</option>
+                                            <option selected value="0">No</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="position-relative form-group">
                                         <label class="">Status</label>
                                         <select name="status" class="form-control" required>
                                             <option selected value="1">Publish</option>

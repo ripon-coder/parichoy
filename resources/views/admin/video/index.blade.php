@@ -22,6 +22,7 @@
                                     <th>Video Title</th>
                                     <th>Date</th>
                                     <th>Status</th>
+                                    <th>Slider</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -34,9 +35,10 @@
                                         <td>
                                             {!! ($post->status) ? '<a class="badge badge-info">Publish </a>': '<a class=" badge badge-warning">Unpublish</a>' !!}
                                         </td>
+                                        <td>{!! ($post->feature) ? '<a class="badge badge-success">Yes </a>': '<a class=" badge badge-warning">No</a>' !!}</td>
                                         <td>
                                             <div class="action-btns">
-                                                <a class="data-edit-btn" data-toggle="tooltip" data-placement="top" title="Edit" href="{{ route('admin.video-category.edit', $post) }}">
+                                                <a class="data-edit-btn" data-toggle="tooltip" data-placement="top" title="Edit" href="{{ route('admin.video.edit', $post) }}">
                                                 <i class="fas fa-edit"></i>
                                                 </a>
                                                 <form method="POST" action="{{ route('admin.video.destroy', $post) }}" accept-charset="UTF-8">
